@@ -34,6 +34,7 @@ gem 'omniauth-google-oauth2'
 gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'jquery-rails'
 gem 'simple_form'
+gem 'paper_trail'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
