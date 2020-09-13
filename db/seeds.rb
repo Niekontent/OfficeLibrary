@@ -9,14 +9,16 @@
 tolkien_titles = ["Silmarillion", "The Lord of the Rings: The Fellowship of the Ring", "The Hobbit or There and Back Again"]
 jordan_titles = ["The Wheel of Time: The Eye of the World", "The Strike at Shayol Ghul", "Conan the Barbarian"]
 
+example_description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
 tolkien_titles.each do |title|
-  Book.create(title: title, author: "J.R.R. Tolkien")
+  Book.create(title: title, author: "J.R.R. Tolkien", description: example_description)
 end
 
 jordan_titles.each do |title|
-  Book.create(title: title, author: "Robert Jordan")
+  Book.create(title: title, author: "Robert Jordan", description: example_description)
 end
 
-Book.create(title: "JavaScript for kids", author: "Nicki Morgan")
-Book.create(title: "Eating People is Wrong", author: "Malcolm Bradbury")
-Book.create(title: "Do Not Open This Book", author: "Andy Lee")
+Book.create(title: "JavaScript for kids", author: "Nicki Morgan", description: example_description)
+Book.create(title: "Eating People is Wrong", author: "Malcolm Bradbury", description: example_description)
+Book.create(title: "Do Not Open This Book", author: "Andy Lee", description: example_description)
