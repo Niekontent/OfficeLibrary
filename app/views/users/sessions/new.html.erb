@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-10 offset-1">
       <h2>You're Logged out! Log in to use OfficeLibrary</h2>
-      <a class="btn btn-primary" href="<%= user_google_oauth2_omniauth_authorize_path %>" role="button">Sign in with Google</a>
+      <%= link_to 'Sign in with Google', user_google_oauth2_omniauth_authorize_path, class: "btn btn-primary" %>
     </div>
   </div>
 </div>

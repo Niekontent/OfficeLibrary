@@ -22,10 +22,10 @@
           <td><%= book.user_id.nil? %></td>
           <td>
             <% if !book.user_id %>
-              <a class="btn btn-success" href="<%= user_borrow_book_path(book) %>" role="button">Borrow</a>
+              <%= link_to 'Borrow', user_book_borrow_path(book), remote: true, method: :post, class: "btn btn-success", role: "button" %>
             <% end %>
           </td>
-          <td><a class="btn btn-primary" href="<%= book_path(book) %>" role="button">Details</a></td>
+          <td><%= link_to 'Details', book_path(book), class: "btn btn-primary", role: "button" %></td>
         </tr>
         <% end %>
         </tbody>

@@ -1,5 +1,4 @@
 class BooksController < ApplicationController
-
   before_action :set_book, only: %i(show edit update destroy)
 
   def index
@@ -12,7 +11,7 @@ class BooksController < ApplicationController
 
   def update
     if @book.update(book_params)
-      redirect_to books_path, flash: { info: 'The book was successfully updated' }
+      redirect_to books_path, flash: { success: 'The book was successfully updated' }
     else
       render :edit
     end
@@ -27,7 +26,7 @@ class BooksController < ApplicationController
     @book.creator_id = current_user.id
 
     if @book.save
-      redirect_to books_path, flash: { info: 'The book was successfully added to the library!' }
+      redirect_to books_path, flash: { success: 'The book was successfully added to the library!' }
     else
       render :new
     end
@@ -35,13 +34,13 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
-    redirect_to books_path, flash: { info: 'The book was successfully destroyed' }
+    redirect_to books_path, flash: { success: 'The book was successfully destroyed' }
   end
 
   private
 
   def book_params
-    params.require(:book).permit(:title, :author)
+    params.require(:book).permit(:title, :author, :description)
   end
 
   def set_book

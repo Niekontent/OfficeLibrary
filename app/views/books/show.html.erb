@@ -4,11 +4,11 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title"><%= @book.title %><span class="font-weight-normal">, <%= @book.author %></span> </h5>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <p class="card-text"><%= @book.description %></p>
           <div class="d-flex">
-            <a href="<%= edit_book_path(@book) %>" class="p-2 btn btn-dark">Edit</a>
-            <a href="<% book_path(@book) %>" data-confirm="Are you sure?" data-method="delete" class="p-2 btn btn-danger ml-2">Destroy</a>
-            <a href="<%= books_path %>" class="ml-auto p-2 btn btn-primary">Back</a>
+            <%= link_to 'Edit', edit_book_path(@book), class: "p-2 btn btn-dark", role: "button" %>
+            <%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: "Are you sure?" }, class: "p-2 btn btn-danger ml-2", role: "button" %>
+            <%= link_to 'Back', books_path, class: "ml-auto p-2 btn btn-primary", role: "button" %>
           </div>
         </div>
       </div>
@@ -29,10 +29,10 @@
               <tr>
                 <th scope="row"><%= version.whodunnit %></th>
                 <td>
-                  <% if !version.reify.user_id %>
-                    Borrowed
-                  <% else %>
+                  <% if version.reify.user_id %>
                     Returned
+                  <% else %>
+                    Borrowed
                   <% end %>
                 </td>
               </tr>
