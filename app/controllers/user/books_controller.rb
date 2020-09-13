@@ -21,6 +21,6 @@ class User::BooksController < ApplicationController
     book_to_return = Book.where(user_id: current_user.id).find(params[:book_id])
     book_to_return.update(user_id: nil)
 
-    redirect_to books_path, flash: { info: 'The book was successfully returned' }
+    redirect_to books_path, flash: { success: 'The book was successfully returned' }
   end
 end
